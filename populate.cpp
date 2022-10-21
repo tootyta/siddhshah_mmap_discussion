@@ -26,6 +26,7 @@ int main(int argc, char** argv){
 
     // easy / hacky way to pass cmdline args
     if (argc == 1){
+        mmap(nullptr, 100, PROT_READ, MAP_PRIVATE, fd, 0);
         // do demand paging if no additional args
         printf("Demand paging\n");
         addr = 0; // TODO
